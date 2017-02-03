@@ -18,12 +18,17 @@
 #ifndef ADAFRUIT_BMP085_H
 #define ADAFRUIT_BMP085_H
 
-#if (ARDUINO >= 100)
- #include "Arduino.h"
+#if defined(PARTICLE)
+ #include "Particle.h"
+ #include <math.h>
 #else
- #include "WProgram.h"
-#endif
-#include "Wire.h"
+ #if (ARDUINO >= 100)
+  #include "Arduino.h"
+ #else
+  #include "WProgram.h"
+ #endif
+ #include "Wire.h"
+#endif	//PARTICLE
 
 #define BMP085_DEBUG 0
 
